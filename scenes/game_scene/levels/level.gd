@@ -22,12 +22,9 @@ func open_tutorials() -> void:
 	GlobalState.save()
 
 func _ready() -> void:
-	level_state = GameState.get_level_state(scene_file_path)
-	%ColorPickerButton.color = level_state.color
-	%BackgroundColor.color = level_state.color
-	if not level_state.tutorial_read:
-		open_tutorials()
-
+	# level_state = GameState.get_level_state(scene_file_path)
+	pass
+	
 func _on_color_picker_button_color_changed(color : Color) -> void:
 	%BackgroundColor.color = color
 	level_state.color = color

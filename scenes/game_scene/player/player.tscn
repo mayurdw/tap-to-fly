@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dkcr8afc15vyh"]
+
+[ext_resource type="Script" uid="uid://daj1igvdtcg4l" path="res://scenes/game_scene/player/player.gd" id="1_coy0a"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_81blf"]
+size = Vector2(21, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_coy0a"]
+
+[node name="Player" type="CharacterBody2D" unique_id=1442179797]
+motion_mode = 1
+script = ExtResource("1_coy0a")
+up_velocity = null
+mass = null
+air_resistance = null
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=496297039]
+texture = SubResource("PlaceholderTexture2D_81blf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1218507289]
+shape = SubResource("RectangleShape2D_coy0a")
+
+[node name="Jump Cooldown" type="Timer" parent="." unique_id=873613646]
+process_callback = 0
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Jump Cooldown" to="." method="_on_jump_cooldown_timeout"]
