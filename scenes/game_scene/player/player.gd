@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export_category("Stats")
 @export var up_velocity : float = -400.0
 @export var mass : float = 100.0
-@export var air_resistance : float = 20.0
 @export var max_falling_speed = 400.0
 
 var jump_allowed : bool = true
